@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <aop:config>
+        <aop:aspect id="myAspect" ref="aopAspect">
+            <aop:pointcut id="myPointcut" expression="execution(* cn.codeartist.spring.aop.bean.AopService.*(..))"/>
+            <aop:before pointcut-ref="myPointcut" method="doBefore"/>
+            <aop:after pointcut-ref="myPointcut" method="doAfter"/>
+            <aop:around pointcut-ref="myPointcut" method="doAround"/>
+            <aop:after-returning pointcut-ref="myPointcut" method="doAfterReturning"/>
+            <aop:after-throwing pointcut-ref="myPointcut" method="doAfterThrowing"/>
+        </aop:aspect>
+    </aop:config>
+
+    <aop:aspectj-autoproxy/>
+
+    <bean id="aopService" class="cn.codeartist.spring.aop.bean.AopService"/>
+    <bean id="aopAspect" class="cn.codeartist.spring.aop.bean.AopAspect"/>
+    <bean id="aopAnnotationAspect" class="cn.codeartist.spring.aop.bean.AopAnnotationAspect"/>
+</beans>
