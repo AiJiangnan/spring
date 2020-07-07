@@ -21,4 +21,8 @@
     <bean id="aopService" class="cn.codeartist.spring.aop.bean.AopService"/>
     <bean id="aopAspect" class="cn.codeartist.spring.aop.bean.AopAspect"/>
     <bean id="aopAnnotationAspect" class="cn.codeartist.spring.aop.bean.AopAnnotationAspect"/>
+    <bean id="aopAspectJExpressionPointcutAdvisor"
+          class="cn.codeartist.spring.aop.bean.AopAspectJExpressionPointcutAdvisor">
+        <constructor-arg name="expression" value="execution(* cn.codeartist.spring.aop.bean.AopService.*(..))"/>
+    </bean>
 </beans>
