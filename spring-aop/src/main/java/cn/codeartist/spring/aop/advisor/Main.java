@@ -1,6 +1,6 @@
-package cn.codeartist.spring.aop;
+package cn.codeartist.spring.aop.advisor;
 
-import cn.codeartist.spring.aop.bean.AopService;
+import cn.codeartist.spring.aop.service.AopService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-aop.xml");
+        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-aop-advisor.xml");
         AopService aopService = applicationContext.getBean(AopService.class);
         aopService.doService();
     }

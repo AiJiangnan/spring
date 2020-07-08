@@ -7,7 +7,7 @@
 
     <aop:config>
         <aop:aspect id="myAspect" ref="aopAspect">
-            <aop:pointcut id="myPointcut" expression="execution(* cn.codeartist.spring.aop.bean.AopService.*(..))"/>
+            <aop:pointcut id="myPointcut" expression="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
             <aop:before pointcut-ref="myPointcut" method="doBefore"/>
             <aop:after pointcut-ref="myPointcut" method="doAfter"/>
             <aop:around pointcut-ref="myPointcut" method="doAround"/>
@@ -16,13 +16,6 @@
         </aop:aspect>
     </aop:config>
 
-    <aop:aspectj-autoproxy/>
-
-    <bean id="aopService" class="cn.codeartist.spring.aop.bean.AopService"/>
-    <bean id="aopAspect" class="cn.codeartist.spring.aop.bean.AopAspect"/>
-    <bean id="aopAnnotationAspect" class="cn.codeartist.spring.aop.bean.AopAnnotationAspect"/>
-    <bean id="aopAspectJExpressionPointcutAdvisor"
-          class="cn.codeartist.spring.aop.bean.AopAspectJExpressionPointcutAdvisor">
-        <constructor-arg name="expression" value="execution(* cn.codeartist.spring.aop.bean.AopService.*(..))"/>
-    </bean>
+    <bean id="aopService" class="cn.codeartist.spring.aop.service.AopService"/>
+    <bean id="aopAspect" class="cn.codeartist.spring.aop.xml.XmlAopAspect"/>
 </beans>

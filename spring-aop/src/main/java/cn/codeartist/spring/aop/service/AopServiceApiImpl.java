@@ -1,4 +1,4 @@
-package cn.codeartist.spring.aop.bean;
+package cn.codeartist.spring.aop.service;
 
 /**
  * @author 艾江南
