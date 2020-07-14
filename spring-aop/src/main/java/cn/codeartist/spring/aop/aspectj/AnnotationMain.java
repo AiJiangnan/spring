@@ -1,6 +1,8 @@
 package cn.codeartist.spring.aop.aspectj;
 
+import cn.codeartist.spring.aop.advice.AopBeforeAdvice;
 import cn.codeartist.spring.aop.service.AopService;
+import org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,6 +32,14 @@ public class AnnotationMain {
         @Bean
         public AnnotationAopAspect annotationAopAspect() {
             return new AnnotationAopAspect();
+        }
+
+        @Bean
+        public AspectJExpressionPointcutAdvisor aspectjExpressionPointcutAdvisor() {
+            AspectJExpressionPointcutAdvisor advisor = new AspectJExpressionPointcutAdvisor();
+            advisor.setExpression("execution(* cn.codeartist.spring.aop.service.*.*(..))");
+            advisor.setAdvice(new AopBeforeAdvice());
+            return advisor;
         }
     }
 }
