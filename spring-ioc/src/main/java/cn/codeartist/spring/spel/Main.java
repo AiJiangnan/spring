@@ -21,7 +21,7 @@ public class Main {
 
         ExpressionParser parser = new SpelExpressionParser();
         String helloWorld = (String) parser.parseExpression("'Hello World'").getValue();
-        double avogadrosNumber = (Double) parser.parseExpression("6.0221415E+23").getValue();
+        double avogadroNumber = (Double) parser.parseExpression("6.0221415E+23").getValue();
         int maxValue = (Integer) parser.parseExpression("0x7FFFFFFF").getValue();
         boolean trueValue = (Boolean) parser.parseExpression("true").getValue();
         Object nullValue = parser.parseExpression("null").getValue();
