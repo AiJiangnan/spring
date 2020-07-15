@@ -9,17 +9,17 @@
         <aop:aspect id="myAspect" ref="aopAspect">
             <aop:pointcut id="myPointcut" expression="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
             <aop:before pointcut-ref="myPointcut" method="doBefore"/>
-            <aop:after pointcut-ref="myPointcut" method="doAfter"/>
-            <aop:around pointcut-ref="myPointcut" method="doAround"/>
             <aop:after-returning pointcut-ref="myPointcut" method="doAfterReturning"/>
+            <aop:around pointcut-ref="myPointcut" method="doAround"/>
+            <aop:after pointcut-ref="myPointcut" method="doAfter"/>
             <aop:after-throwing pointcut-ref="myPointcut" method="doAfterThrowing"/>
         </aop:aspect>
         <aop:aspect id="myAspect" ref="aopAspect2">
             <aop:pointcut id="myPointcut" expression="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
             <aop:before pointcut-ref="myPointcut" method="doBefore"/>
-            <aop:after pointcut-ref="myPointcut" method="doAfter"/>
-            <aop:around pointcut-ref="myPointcut" method="doAround"/>
             <aop:after-returning pointcut-ref="myPointcut" method="doAfterReturning"/>
+            <aop:around pointcut-ref="myPointcut" method="doAround"/>
+            <aop:after pointcut-ref="myPointcut" method="doAfter"/>
             <aop:after-throwing pointcut-ref="myPointcut" method="doAfterThrowing"/>
         </aop:aspect>
     </aop:config>

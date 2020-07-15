@@ -20,9 +20,9 @@ public class AnnotationAopAspect {
         System.out.println("AnnotationAopAspect.doBefore");
     }
 
-    @After("pointcut()")
-    public void doAfter(JoinPoint joinPoint) {
-        System.out.println("AnnotationAopAspect.doAfter");
+    @AfterReturning("pointcut()")
+    public void doAfterReturning(JoinPoint joinPoint) {
+        System.out.println("AnnotationAopAspect.doAfterReturning");
     }
 
     @Around("pointcut()")
@@ -33,9 +33,9 @@ public class AnnotationAopAspect {
         return proceed;
     }
 
-    @AfterReturning("pointcut()")
-    public void doAfterReturning(JoinPoint joinPoint) {
-        System.out.println("AnnotationAopAspect.doAfterReturning");
+    @After("pointcut()")
+    public void doAfter(JoinPoint joinPoint) {
+        System.out.println("AnnotationAopAspect.doAfter");
     }
 
     @AfterThrowing("pointcut()")
