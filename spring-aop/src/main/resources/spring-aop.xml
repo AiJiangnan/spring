@@ -6,9 +6,15 @@
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <aop:config>
-        <aop:pointcut id="p" expression="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
-        <aop:advisor advice-ref="aopBeforeAdvice" pointcut-ref="p"/>
         <aop:aspect id="myAspect" ref="aopAspect">
+            <aop:pointcut id="myPointcut" expression="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
+            <aop:before pointcut-ref="myPointcut" method="doBefore"/>
+            <aop:after pointcut-ref="myPointcut" method="doAfter"/>
+            <aop:around pointcut-ref="myPointcut" method="doAround"/>
+            <aop:after-returning pointcut-ref="myPointcut" method="doAfterReturning"/>
+            <aop:after-throwing pointcut-ref="myPointcut" method="doAfterThrowing"/>
+        </aop:aspect>
+        <aop:aspect id="myAspect" ref="aopAspect2">
             <aop:pointcut id="myPointcut" expression="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
             <aop:before pointcut-ref="myPointcut" method="doBefore"/>
             <aop:after pointcut-ref="myPointcut" method="doAfter"/>
@@ -18,7 +24,13 @@
         </aop:aspect>
     </aop:config>
 
+    <aop:config>
+        <aop:pointcut id="p" expression="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
+        <aop:advisor advice-ref="aopBeforeAdvice" pointcut-ref="p"/>
+    </aop:config>
+
     <bean id="aopService" class="cn.codeartist.spring.aop.service.AopService"/>
     <bean id="aopAspect" class="cn.codeartist.spring.aop.xml.XmlAopAspect"/>
+    <bean id="aopAspect2" class="cn.codeartist.spring.aop.xml.XmlAopAspect2"/>
     <bean id="aopBeforeAdvice" class="cn.codeartist.spring.aop.advice.AopBeforeAdvice"/>
 </beans>

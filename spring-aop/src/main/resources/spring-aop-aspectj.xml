@@ -9,9 +9,11 @@
 
     <bean id="aopService" class="cn.codeartist.spring.aop.service.AopService"/>
     <bean id="annotationAopAspect" class="cn.codeartist.spring.aop.aspectj.AnnotationAopAspect"/>
+    <bean id="annotationAopAspect2" class="cn.codeartist.spring.aop.aspectj.AnnotationAopAspect2"/>
+
     <bean id="aopBeforeAdvice" class="cn.codeartist.spring.aop.advice.AopBeforeAdvice"/>
     <bean class="org.springframework.aop.aspectj.AspectJExpressionPointcutAdvisor">
-        <property name="Expression" value="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
+        <property name="expression" value="execution(* cn.codeartist.spring.aop.service.*.*(..))"/>
         <property name="advice" ref="aopBeforeAdvice"/>
     </bean>
 </beans>

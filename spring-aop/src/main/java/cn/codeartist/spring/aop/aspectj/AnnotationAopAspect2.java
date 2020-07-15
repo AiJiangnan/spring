@@ -9,7 +9,7 @@ import org.aspectj.lang.annotation.*;
  * @date 2020/6/24
  */
 @Aspect
-public class AnnotationAopAspect {
+public class AnnotationAopAspect2 {
 
     @Pointcut("execution(* cn.codeartist.spring.aop.service.*.*(..))")
     public void pointcut() {
@@ -17,29 +17,29 @@ public class AnnotationAopAspect {
 
     @Before("pointcut()")
     public void doBefore(JoinPoint joinPoint) {
-        System.out.println("AnnotationAopAspect.doBefore");
+        System.out.println("AnnotationAopAspect2.doBefore");
     }
 
     @After("pointcut()")
     public void doAfter(JoinPoint joinPoint) {
-        System.out.println("AnnotationAopAspect.doAfter");
+        System.out.println("AnnotationAopAspect2.doAfter");
     }
 
     @Around("pointcut()")
     public Object doAround(ProceedingJoinPoint joinPoint) throws Throwable {
-        System.out.println("AnnotationAopAspect.doAround::start");
+        System.out.println("AnnotationAopAspect2.doAround::start");
         Object proceed = joinPoint.proceed();
-        System.out.println("AnnotationAopAspect.doAround::end");
+        System.out.println("AnnotationAopAspect2.doAround::end");
         return proceed;
     }
 
     @AfterReturning("pointcut()")
     public void doAfterReturning(JoinPoint joinPoint) {
-        System.out.println("AnnotationAopAspect.doAfterReturning");
+        System.out.println("AnnotationAopAspect2.doAfterReturning");
     }
 
     @AfterThrowing("pointcut()")
     public void doAfterThrowing(JoinPoint joinPoint) {
-        System.out.println("AnnotationAopAspect.doAfterThrowing");
+        System.out.println("AnnotationAopAspect2.doAfterThrowing");
     }
 }
