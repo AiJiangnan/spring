@@ -23,7 +23,7 @@ public class AspectJExpressionPointcutAdvisorAspect extends AspectJExpressionPoi
 //        super.setAdvice(new AopAfterThrowingAdvice());
     }
 
-    private static class AopBeforeAdvice implements MethodBeforeAdvice {
+    public static class AopBeforeAdvice implements MethodBeforeAdvice {
 
         @Override
         public void before(Method method, Object[] args, Object target) throws Throwable {
@@ -31,7 +31,7 @@ public class AspectJExpressionPointcutAdvisorAspect extends AspectJExpressionPoi
         }
     }
 
-    private static class AopAroundAdvice implements MethodInterceptor {
+    public static class AopAroundAdvice implements MethodInterceptor {
 
         @Override
         public Object invoke(MethodInvocation invocation) throws Throwable {
@@ -40,7 +40,7 @@ public class AspectJExpressionPointcutAdvisorAspect extends AspectJExpressionPoi
         }
     }
 
-    private static class AopAfterReturningAdvice implements AfterReturningAdvice {
+    public static class AopAfterReturningAdvice implements AfterReturningAdvice {
 
         @Override
         public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
@@ -48,7 +48,7 @@ public class AspectJExpressionPointcutAdvisorAspect extends AspectJExpressionPoi
         }
     }
 
-    private static class AopAfterThrowingAdvice implements ThrowsAdvice {
+    public static class AopAfterThrowingAdvice implements ThrowsAdvice {
 
         public void afterThrowing(Method method, Object[] args, Object target, Exception ex) {
             System.out.println("AopAfterThrowingAdvice.afterThrowing");

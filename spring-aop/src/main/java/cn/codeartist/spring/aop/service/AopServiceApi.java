@@ -6,5 +6,8 @@ package cn.codeartist.spring.aop.service;
  */
 public interface AopServiceApi {
 
+    /**
+     * do something
+     */
     void doService();
 }
