@@ -1,6 +1,8 @@
 package cn.codeartist.spring.test.test;
 
 import cn.codeartist.spring.test.TestApplicationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
@@ -13,6 +15,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @ActiveProfiles("local")
 @ContextConfiguration(classes = TestApplicationContext.class)
-public abstract class BaseTest {
+public abstract class AbstractSpringRunnerTests {
 
+    protected final Log logger = LogFactory.getLog(getClass());
 }

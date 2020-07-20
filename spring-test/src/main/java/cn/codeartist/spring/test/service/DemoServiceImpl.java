@@ -21,4 +21,10 @@ public class DemoServiceImpl implements DemoService {
         System.out.println("Profile: " + Arrays.toString(environment.getActiveProfiles()));
         System.out.println("DemoServiceImpl.service");
     }
+
+    @Override
+    public String service(String str) {
+        System.out.println("DemoServiceImpl.service::" + str);
+        return str;
+    }
 }

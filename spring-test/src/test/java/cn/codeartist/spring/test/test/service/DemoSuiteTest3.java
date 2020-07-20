@@ -4,24 +4,20 @@ import cn.codeartist.spring.test.service.DemoService;
 import cn.codeartist.spring.test.test.AbstractSpringRunnerTests;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.test.annotation.Repeat;
-import org.springframework.test.annotation.Timed;
 
 /**
  * jnai
  *
  * @author 艾江南
- * @date 2020/7/16
+ * @date 2020/7/20
  */
-public class DemoServiceTest extends AbstractSpringRunnerTests {
+public class DemoSuiteTest3 extends AbstractSpringRunnerTests {
 
     @Autowired
     private DemoService demoService;
 
     @Test
-    @Repeat(3)
-    @Timed(millis = 300)
     public void service() {
-        demoService.service();
+        demoService.service("DemoSuiteTest3.service");
     }
 }
