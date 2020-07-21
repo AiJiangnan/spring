@@ -1,4 +1,4 @@
-package cn.codeartist.spring.test.test.junit;
+package cn.codeartist.spring.test.test.spring;
 
 import cn.codeartist.spring.test.service.DemoService;
 import cn.codeartist.spring.test.test.AbstractOtherRunnerTests;
