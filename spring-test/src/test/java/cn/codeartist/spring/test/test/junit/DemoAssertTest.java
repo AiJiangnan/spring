@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
+import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
@@ -36,5 +37,6 @@ public class DemoAssertTest {
         assertNull("", actual);
         assertSame("", expected, actual);
         assertNotSame("", expected, actual);
+        assertThat(actual, is(expected));
     }
 }
