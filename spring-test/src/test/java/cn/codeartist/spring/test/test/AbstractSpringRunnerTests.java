@@ -1,11 +1,11 @@
 package cn.codeartist.spring.test.test;
 
-import cn.codeartist.spring.test.TestApplicationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import cn.codeartist.spring.test.TestApplication;
 import org.junit.runner.RunWith;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
 /**
@@ -14,8 +14,8 @@ import org.springframework.test.context.junit4.SpringRunner;
  */
 @RunWith(SpringRunner.class)
 @ActiveProfiles("local")
-@ContextConfiguration(classes = TestApplicationContext.class)
+@SpringBootTest(classes = TestApplication.class)
 public abstract class AbstractSpringRunnerTests {
 
-    protected final Log logger = LogFactory.getLog(getClass());
+    protected final Logger logger = LoggerFactory.getLogger(getClass());
 }
