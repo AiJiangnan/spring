@@ -29,6 +29,6 @@ public class DemoParameterizedTest extends AbstractOtherRunnerTests {
 
     @Test
     public void service() {
-        demoService.service(param);
+        demoService.service();
     }
 }

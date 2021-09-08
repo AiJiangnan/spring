@@ -18,6 +18,6 @@ public class DemoSuiteTest1 extends AbstractSpringRunnerTests {
 
     @Test
     public void service() {
-        demoService.service("DemoSuiteTest1.service");
+        demoService.service();
     }
 }
