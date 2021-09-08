@@ -15,7 +15,6 @@ public interface DemoService {
      * do something with parameter
      *
      * @param str 参数
-     * @return 返回
      */
-    String service(String str);
+    void service(String str);
 }

@@ -15,6 +15,7 @@ public class AbstractOtherRunnerTests extends AbstractSpringRunnerTests {
 
     @ClassRule
     public static final SpringClassRule springClassRule = new SpringClassRule();
+
     @Rule
     public final SpringMethodRule springMethodRule = new SpringMethodRule();
 }
