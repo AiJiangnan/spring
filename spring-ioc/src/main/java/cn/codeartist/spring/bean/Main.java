@@ -1,7 +1,5 @@
-package cn.codeartist.spring.beanfactory;
+package cn.codeartist.spring.bean;
 
-import cn.codeartist.spring.beanfactory.bean.BeanExample;
-import cn.codeartist.spring.beanfactory.bean.BeanProvider;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.core.io.ClassPathResource;

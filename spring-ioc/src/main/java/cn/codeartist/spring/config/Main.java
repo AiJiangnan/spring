@@ -1,6 +1,6 @@
 package cn.codeartist.spring.config;
 
-import cn.codeartist.spring.beanfactory.bean.BeanExample;
+import cn.codeartist.spring.bean.BeanExample;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;

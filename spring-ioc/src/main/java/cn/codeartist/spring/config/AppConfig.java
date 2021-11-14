@@ -1,7 +1,7 @@
 package cn.codeartist.spring.config;
 
-import cn.codeartist.spring.beanfactory.bean.BeanExample;
-import cn.codeartist.spring.beanfactory.bean.BeanProvider;
+import cn.codeartist.spring.bean.BeanExample;
+import cn.codeartist.spring.bean.BeanProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;

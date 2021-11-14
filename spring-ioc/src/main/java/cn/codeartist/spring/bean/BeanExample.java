@@ -1,4 +1,4 @@
-package cn.codeartist.spring.beanfactory.bean;
+package cn.codeartist.spring.bean;
 
 import org.springframework.beans.factory.annotation.Autowired;
 

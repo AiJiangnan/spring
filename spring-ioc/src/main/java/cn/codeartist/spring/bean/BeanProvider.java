@@ -1,4 +1,4 @@
-package cn.codeartist.spring.beanfactory.bean;
+package cn.codeartist.spring.bean;
 
 /**
  * BeanProvider

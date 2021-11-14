@@ -3,12 +3,44 @@
        xmlns="http://www.springframework.org/schema/beans"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <!--<bean id="beanExample" class="cn.codeartist.spring.resource.bean.BeanExample"/>-->
+    <!-- 构造器实例化 -->
+    <bean id="beanExample" class="cn.codeartist.spring.bean.xml.BeanExample"/>
+    <bean id="beanProvider" class="cn.codeartist.spring.bean.xml.BeanProvider"/>
 
-    <!--<context:component-scan base-package="cn.codeartist.spring.resource"/>-->
+    <!-- 静态工厂方式实例化 -->
+    <bean id="beanExample1" class="cn.codeartist.spring.bean.xml.BeanExample" factory-method="getInstance"/>
 
-    <beans>
-        <bean id="beanExample" class="cn.codeartist.spring.beanfactory.bean.BeanExample"/>
-        <bean id="beanProvider" class="cn.codeartist.spring.beanfactory.bean.BeanProvider"/>
-    </beans>
+    <!-- 实例工厂方式实例化 -->
+    <bean id="beanExample2" class="cn.codeartist.spring.bean.xml.BeanExample" factory-bean="beanExampleFactory"
+          factory-method="getInstance"/>
+    <bean id="beanExampleFactory" class="cn.codeartist.spring.bean.xml.BeanExampleFactory"/>
+
+    <!-- 构造器注入 -->
+    <bean id="beanExample3" class="cn.codeartist.spring.bean.xml.BeanExample">
+        <constructor-arg index="0" value="码匠公众号"/>
+        <constructor-arg index="1" value="2021"/>
+        <constructor-arg index="2" ref="beanProvider"/>
+    </bean>
+
+    <!-- Setter方法注入 -->
+    <bean id="beanExample4" class="cn.codeartist.spring.bean.xml.BeanExample">
+        <property name="name" value="码匠公众号"/>
+        <property name="year" value="2021"/>
+        <property name="beanProvider" ref="beanProvider"/>
+    </bean>
+
+    <!-- DependOn -->
+    <bean id="beanExample5" class="cn.codeartist.spring.bean.xml.BeanExample" depends-on="beanProvider">
+        <property name="name" value="码匠公众号"/>
+        <property name="year" value="2021"/>
+        <property name="beanProvider" ref="beanProvider"/>
+    </bean>
+
+    <!-- DependOn -->
+    <bean id="beanProvider1" class="cn.codeartist.spring.bean.xml.BeanProvider" lazy-init="true"/>
+    <bean id="beanExample6" class="cn.codeartist.spring.bean.xml.BeanExample" depends-on="beanProvider">
+        <property name="name" value="码匠公众号"/>
+        <property name="year" value="2021"/>
+        <property name="beanProvider" ref="beanProvider1"/>
+    </bean>
 </beans>
