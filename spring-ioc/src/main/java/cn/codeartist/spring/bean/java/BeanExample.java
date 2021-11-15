@@ -1,9 +1,7 @@
-package cn.codeartist.spring.bean.annotation;
+package cn.codeartist.spring.bean.java;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class BeanExample {
 
     private String name;
