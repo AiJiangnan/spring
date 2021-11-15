@@ -1,6 +1,6 @@
 package cn.codeartist.spring.config;
 
-import cn.codeartist.spring.bean.BeanExample;
+import cn.codeartist.spring.bean.xml.BeanExample;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.ArrayList;
@@ -18,7 +18,6 @@ public class Main {
         AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
         BeanExample beanExample = applicationContext.getBean(BeanExample.class);
         beanExample.run();
-        beanExample.test();
         EmailService emailService = applicationContext.getBean(EmailService.class);
         List<String> list = new ArrayList<>();
         list.add("123");

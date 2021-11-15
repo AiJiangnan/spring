@@ -1,7 +1,6 @@
 package cn.codeartist.spring.config;
 
-import cn.codeartist.spring.bean.BeanExample;
-import cn.codeartist.spring.bean.BeanProvider;
+import cn.codeartist.spring.bean.xml.BeanProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,10 +18,6 @@ import org.springframework.context.annotation.PropertySource;
 @PropertySource("classpath:${name}.properties")
 public class AppConfig {
 
-    @Bean
-    public BeanExample beanExample() {
-        return new BeanExample();
-    }
 
     @Bean
     public BeanProvider beanProvider() {

@@ -1,7 +1,9 @@
 package cn.codeartist.spring.spel;
 
+import org.springframework.expression.EvaluationContext;
 import org.springframework.expression.ExpressionParser;
 import org.springframework.expression.spel.standard.SpelExpressionParser;
+import org.springframework.expression.spel.support.SimpleEvaluationContext;
 
 /**
  * @author 艾江南
@@ -10,20 +12,12 @@ import org.springframework.expression.spel.standard.SpelExpressionParser;
 public class Main {
 
     public static void main(String[] args) {
-//        ExpressionParser parser = new SpelExpressionParser();
-//        Expression exp = parser.parseExpression("'Hello world'.concat('!')");
-//        String message = (String) exp.getValue();
-//        System.out.println(message);
-//
-//        exp = parser.parseExpression("'Hello World'.bytes.length");
-//        Integer value = exp.getValue(Integer.class);
-//        System.out.println(value);
-
+        // create an array of integers
         ExpressionParser parser = new SpelExpressionParser();
-        String helloWorld = (String) parser.parseExpression("'Hello World'").getValue();
-        double avogadroNumber = (Double) parser.parseExpression("6.0221415E+23").getValue();
-        int maxValue = (Integer) parser.parseExpression("0x7FFFFFFF").getValue();
-        boolean trueValue = (Boolean) parser.parseExpression("true").getValue();
-        Object nullValue = parser.parseExpression("null").getValue();
+        EvaluationContext context = SimpleEvaluationContext.forReadOnlyDataBinding().build();
+        context.setVariable("val", 100);
+
+        Boolean value = parser.parseExpression("#val > 110").getValue(context, Boolean.class);
+        System.out.println(value);
     }
 }

@@ -1,6 +1,6 @@
 package cn.codeartist.spring.config;
 
-import cn.codeartist.spring.bean.BeanProvider;
+import cn.codeartist.spring.bean.xml.BeanProvider;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
