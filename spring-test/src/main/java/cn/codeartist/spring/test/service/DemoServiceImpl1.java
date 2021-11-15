@@ -1,6 +1,5 @@
 package cn.codeartist.spring.test.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -8,15 +7,11 @@ import org.springframework.stereotype.Service;
  * @date 2020/7/15
  */
 @Service
-public class DemoServiceImpl implements DemoService {
-
-    @Autowired
-    private DemoService1 demoService1;
+public class DemoServiceImpl1 implements DemoService1 {
 
     @Override
     public void service() {
-        System.out.println("DemoServiceImpl.service");
-        demoService1.service();
+        System.out.println("DemoServiceImpl1.service");
     }
 
     @Override
