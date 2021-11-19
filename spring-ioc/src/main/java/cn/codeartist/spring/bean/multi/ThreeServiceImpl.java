@@ -1,10 +1,5 @@
 package cn.codeartist.spring.bean.multi;
 
-import org.springframework.core.annotation.Order;
-import org.springframework.stereotype.Service;
-
-@Order(3)
-@Service
 public class ThreeServiceImpl implements BeanService {
 
     @Override
