@@ -2,12 +2,10 @@ package cn.codeartist.spring.bean.life;
 
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
-@Component
 public class OneBeanExample extends BeanAware implements InitializingBean, DisposableBean {
 
     public OneBeanExample() {
