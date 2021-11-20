@@ -29,18 +29,24 @@
         <property name="beanProvider" ref="beanProvider"/>
     </bean>
 
-    <!-- DependOn -->
+    <!-- 依赖关系 -->
     <bean id="beanExample5" class="cn.codeartist.spring.bean.xml.BeanExample" depends-on="beanProvider">
         <property name="name" value="码匠公众号"/>
         <property name="year" value="2021"/>
         <property name="beanProvider" ref="beanProvider"/>
     </bean>
 
-    <!-- DependOn -->
+    <!-- 懒加载 -->
     <bean id="beanProvider1" class="cn.codeartist.spring.bean.xml.BeanProvider" lazy-init="true"/>
     <bean id="beanExample6" class="cn.codeartist.spring.bean.xml.BeanExample" depends-on="beanProvider">
         <property name="name" value="码匠公众号"/>
         <property name="year" value="2021"/>
         <property name="beanProvider" ref="beanProvider1"/>
+    </bean>
+
+    <!-- 自动注入 -->
+    <bean id="beanExample7" class="cn.codeartist.spring.bean.xml.BeanExample" autowire="byName">
+        <property name="name" value="码匠公众号"/>
+        <property name="year" value="2021"/>
     </bean>
 </beans>
