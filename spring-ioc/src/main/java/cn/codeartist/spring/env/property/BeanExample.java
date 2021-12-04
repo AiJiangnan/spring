@@ -5,7 +5,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
 @Component
-@PropertySource("spring.properties")
+@PropertySource("classpath:spring.properties")
 public class BeanExample {
 
     @Value("${test.value:default}")
