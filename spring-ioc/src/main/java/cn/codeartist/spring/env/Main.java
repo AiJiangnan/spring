@@ -24,5 +24,6 @@ public class Main {
         BeanExample bean = applicationContext.getBean(BeanExample.class);
         System.out.println(bean.getName());
         System.out.println(environment.getProperty("test.value"));
+        System.out.println(environment.resolvePlaceholders("test.value=${test.value}"));
     }
 }
