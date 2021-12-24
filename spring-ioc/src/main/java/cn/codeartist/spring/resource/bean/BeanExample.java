@@ -12,7 +12,7 @@ import java.io.File;
 @Component
 public class BeanExample {
 
-    @Value("classpath:test/test-one.txt")
+    @Value("classpath:test/test-two.txt")
     private File file;
 
     public File getFile() {
