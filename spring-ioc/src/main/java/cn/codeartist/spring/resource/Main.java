@@ -9,7 +9,6 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.UrlResource;
 import org.springframework.util.StreamUtils;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
@@ -50,15 +49,18 @@ public class Main {
 
         resource = applicationContext.getResource("classpath:test/test-three.txt");
         System.out.println(streamToString(resource));
+        System.out.println();
         Resource[] resources = applicationContext.getResources("classpath:test/test-*.txt");
         for (Resource res : resources) {
-            System.out.println(res.getDescription());
+            System.out.println(streamToString(res));
         }
+
+        System.out.println();
 
         // 注入Resources
         BeanExample bean = applicationContext.getBean(BeanExample.class);
-        String data = StreamUtils.copyToString(new FileInputStream(bean.getFile()), StandardCharsets.UTF_8);
-        System.out.println(data);
+        System.out.println(streamToString(bean.getResource()));
+        System.out.println(streamToString(new FileSystemResource(bean.getFile())));
     }
 
     private static String streamToString(Resource resource) throws IOException {
