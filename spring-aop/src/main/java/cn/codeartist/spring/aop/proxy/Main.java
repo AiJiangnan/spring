@@ -1,8 +1,5 @@
 package cn.codeartist.spring.aop.proxy;
 
-import cn.codeartist.spring.aop.service.AopService;
-import cn.codeartist.spring.aop.service.AopServiceApi;
-import cn.codeartist.spring.aop.service.AopServiceApiImpl;
 import org.springframework.cglib.proxy.Enhancer;
 
 /**
@@ -12,16 +9,18 @@ import org.springframework.cglib.proxy.Enhancer;
 public class Main {
 
     public static void main(String[] args) {
+
         // JDK Proxy
-        AopServiceApi aopServiceApi = new AopServiceApiImpl();
-        ServiceProxy proxy = new ServiceProxy();
-        AopServiceApi proxyTarget = (AopServiceApi) proxy.getTarget(aopServiceApi);
+        DemoService demoService = new DemoServiceImpl();
+        DemoServiceProxy proxy = new DemoServiceProxy();
+        DemoService proxyTarget = (DemoService) proxy.getTarget(demoService);
         proxyTarget.doService();
+
         // CGLib Proxy
         Enhancer enhancer = new Enhancer();
-        enhancer.setSuperclass(AopService.class);
-        enhancer.setCallback(new ServiceInterceptor());
-        AopService service = (AopService) enhancer.create();
+        enhancer.setSuperclass(DemoServiceImpl.class);
+        enhancer.setCallback(new DemoServiceInterceptor());
+        DemoService service = (DemoService) enhancer.create();
         service.doService();
     }
 }
