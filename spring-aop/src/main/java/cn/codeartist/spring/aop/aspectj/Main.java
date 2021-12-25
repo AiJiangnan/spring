@@ -12,11 +12,7 @@ public class Main {
         AnnotationConfigApplicationContext applicationContext =
                 new AnnotationConfigApplicationContext("cn.codeartist.spring.aop.aspectj");
         DemoService demoService = applicationContext.getBean(DemoService.class);
-        try {
-            demoService.doService();
-            demoService.doException();
-        } catch (Exception e) {
-            System.err.println(e);
-        }
+        demoService.doService();
+        demoService.doException();
     }
 }
