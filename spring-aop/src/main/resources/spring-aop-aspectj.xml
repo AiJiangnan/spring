@@ -8,7 +8,7 @@
     <aop:aspectj-autoproxy/>
 
     <bean id="aopService" class="cn.codeartist.spring.aop.service.AopService"/>
-    <bean id="annotationAopAspect" class="cn.codeartist.spring.aop.aspectj.AnnotationAopAspect"/>
+    <bean id="annotationAopAspect" class="cn.codeartist.spring.aop.aspectj.DemoAspect"/>
     <bean id="annotationAopAspect2" class="cn.codeartist.spring.aop.aspectj.AnnotationAopAspect2"/>
 
     <bean id="aopBeforeAdvice" class="cn.codeartist.spring.aop.advice.AopBeforeAdvice"/>

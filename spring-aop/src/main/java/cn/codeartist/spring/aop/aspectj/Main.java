@@ -1,17 +1,22 @@
 package cn.codeartist.spring.aop.aspectj;
 
-import cn.codeartist.spring.aop.service.AopService;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
  * @author 艾江南
- * @date 2020/6/23
+ * @date 2021/12/25
  */
 public class Main {
 
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring-aop-aspectj.xml");
-        AopService aopService = applicationContext.getBean(AopService.class);
-        aopService.doService();
+        AnnotationConfigApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext("cn.codeartist.spring.aop.aspectj");
+        DemoService demoService = applicationContext.getBean(DemoService.class);
+        try {
+            demoService.doService();
+            demoService.doException();
+        } catch (Exception e) {
+            System.err.println(e);
+        }
     }
 }
