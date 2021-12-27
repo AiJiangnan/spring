@@ -10,10 +10,10 @@ import java.lang.reflect.Method;
  * @author 艾江南
  * @date 2020/7/14
  */
-public class AopBeforeAdvice implements MethodBeforeAdvice {
+public class BeforeAdvice implements MethodBeforeAdvice {
 
     @Override
     public void before(Method method, Object[] args, Object target) {
-        System.out.println("AopBeforeAdvice.before");
+        System.out.println("Advisor before advice.");
     }
 }
