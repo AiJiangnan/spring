@@ -1,4 +1,4 @@
-package cn.codeartist.spring.aop.aspectj;
+package cn.codeartist.spring.aop.advice;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -10,10 +10,11 @@ public class Main {
 
     public static void main(String[] args) {
         AnnotationConfigApplicationContext applicationContext =
-                new AnnotationConfigApplicationContext("cn.codeartist.spring.aop.aspectj");
+                new AnnotationConfigApplicationContext("cn.codeartist.spring.aop.advice");
         DemoService demoService = applicationContext.getBean(DemoService.class);
         demoService.doService();
-        demoService.doException();
+//        demoService.doService("CodeArtist");
+//        demoService.doServiceThrow();
         applicationContext.close();
     }
 }
