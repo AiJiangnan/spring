@@ -13,7 +13,13 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 public class Main {
 
     public static void main(String[] args) {
-        AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext(BeanConfig.class);
+        AnnotationConfigApplicationContext applicationContext =
+                new AnnotationConfigApplicationContext("cn.codeartist.spring.aop.pointcut");
+        DemoService bean = applicationContext.getBean(DemoService.class);
+        Example example = new Example();
+        example.setName("CodeArtist");
+        bean.doService(example);
+        applicationContext.close();
     }
 
     @Configuration

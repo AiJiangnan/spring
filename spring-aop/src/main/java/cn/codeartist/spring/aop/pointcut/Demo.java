@@ -3,10 +3,10 @@ package cn.codeartist.spring.aop.pointcut;
 import java.lang.annotation.*;
 
 /**
- * jnai
+ * 类型方法注解
  *
  * @author 艾江南
- * @date 2020/7/17
+ * @date 2022/4/28
  */
 @Target({ElementType.METHOD, ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
