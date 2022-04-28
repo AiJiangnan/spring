@@ -101,14 +101,12 @@ public class DemoAspect {
         System.out.println("===@target " + joinPoint.getTarget().getClass().getSimpleName() + "===");
     }
 
-
     // @annotation：匹配指定注解的方法
 
     @Before("@annotation(cn.codeartist.spring.aop.pointcut.Demo)")
     public void doAtAnnotation(JoinPoint joinPoint) {
         System.out.println("===@annotation " + joinPoint.getTarget().getClass().getSimpleName() + "===");
     }
-
 
     // @args：匹配指定注解类型的方法类型
 
