@@ -1,5 +1,6 @@
 package cn.codeartist.spring.aop.pointcut;
 
+import cn.codeartist.spring.aop.pointcut.service.DemoSubService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
@@ -19,6 +20,8 @@ public class Main {
         Example example = new Example();
         example.setName("CodeArtist");
         bean.doService(example);
+        DemoSubService bean2 = applicationContext.getBean(DemoSubService.class);
+        bean2.doService(example);
         applicationContext.close();
     }
 

@@ -16,7 +16,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class DemoAspect {
 
-    @Pointcut("execution(* cn.codeartist.spring.aop.pointcut.*..*(..))")
+    @Pointcut("execution(* cn.codeartist.spring.aop.pointcut..*(..))")
     private void atExecution() {
     }
 
@@ -78,20 +78,21 @@ public class DemoAspect {
     }
 
     // @target：匹配指定注解的目标对象实例
+
     @Before("@target(cn.codeartist.spring.aop.pointcut.Demo)")
     public void doAtTarget(JoinPoint joinPoint) {
         System.out.println("===@target " + getSimpleName(joinPoint) + "===");
     }
 
-
     // @annotation：匹配指定注解的方法
+
     @Before("@annotation(cn.codeartist.spring.aop.pointcut.Demo)")
     public void doAtAnnotation(JoinPoint joinPoint) {
         System.out.println("===@annotation " + getSimpleName(joinPoint) + "===");
     }
 
-
     // @args：匹配指定注解类型的方法类型
+
     @Before("@args(cn.codeartist.spring.aop.pointcut.Demo)")
     public void doAtArgs(JoinPoint joinPoint) {
         System.out.println("===@args " + getSimpleName(joinPoint) + "===");
