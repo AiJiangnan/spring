@@ -63,6 +63,11 @@ public class DemoAspect {
         System.out.println("===this   class===");
     }
 
+    @Before("args(cn.codeartist.spring.aop.pointcut.Example)")
+    public void doArgs() {
+        System.out.println("===args pointcut===");
+    }
+
     // bean：匹配Bean名称
 
     @Before("bean(demoServiceImpl)")
