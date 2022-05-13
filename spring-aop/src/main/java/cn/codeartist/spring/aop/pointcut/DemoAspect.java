@@ -82,11 +82,21 @@ public class DemoAspect {
         System.out.println("===@within " + getSimpleName(joinPoint) + "===");
     }
 
+    @Before("@within(demo)")
+    public void doAtWithinParam(JoinPoint joinPoint, Demo demo) {
+        System.out.println("===@within param " + getSimpleName(joinPoint) + "===");
+    }
+
     // @target：匹配指定注解的目标对象实例
 
     @Before("@target(cn.codeartist.spring.aop.pointcut.Demo)")
     public void doAtTarget(JoinPoint joinPoint) {
         System.out.println("===@target " + getSimpleName(joinPoint) + "===");
+    }
+
+    @Before("@target(demo)")
+    public void doAtTargetParam(JoinPoint joinPoint, Demo demo) {
+        System.out.println("===@target param " + getSimpleName(joinPoint) + "===");
     }
 
     // @annotation：匹配指定注解的方法
@@ -96,11 +106,21 @@ public class DemoAspect {
         System.out.println("===@annotation " + getSimpleName(joinPoint) + "===");
     }
 
+    @Before("@annotation(demo)")
+    public void doAtAnnotationParam(JoinPoint joinPoint, Demo demo) {
+        System.out.println("===@annotation param " + getSimpleName(joinPoint) + "===");
+    }
+
     // @args：匹配指定注解类型的方法类型
 
     @Before("@args(cn.codeartist.spring.aop.pointcut.Demo)")
     public void doAtArgs(JoinPoint joinPoint) {
         System.out.println("===@args " + getSimpleName(joinPoint) + "===");
+    }
+
+    @Before("@args(demo)")
+    public void doAtArgsParam(JoinPoint joinPoint, Demo demo) {
+        System.out.println("===@args param " + getSimpleName(joinPoint) + "===");
     }
 
     // Common Pointcut
