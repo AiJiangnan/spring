@@ -9,11 +9,13 @@ import org.aopalliance.intercept.MethodInvocation;
  * @author 艾江南
  * @date 2022/11/14
  */
-public class AroundAdvice implements MethodInterceptor {
+public class DemoAroundAdvice implements MethodInterceptor {
 
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
         System.out.println("AroundAdvice.invoke");
-        return invocation.proceed();
+        Object proceed = invocation.proceed();
+        System.out.println("AroundAdvice.invoke");
+        return proceed;
     }
 }

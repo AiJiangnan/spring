@@ -1,6 +1,6 @@
 package cn.codeartist.spring.aop.aopapi;
 
-import cn.codeartist.spring.aop.aopapi.advice.AroundAdvice;
+import cn.codeartist.spring.aop.aopapi.advice.DemoAroundAdvice;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -39,7 +39,7 @@ public class Main {
             advisor.setPointcut(pointcut);
 
             // advisor.setAdvice(new BeforeAdvice());
-            advisor.setAdvice(new AroundAdvice());
+            advisor.setAdvice(new DemoAroundAdvice());
             // advisor.setAdvice(new AfterReturningAdvice());
             // advisor.setAdvice(new ThrowsAdvice());
 

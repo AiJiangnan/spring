@@ -1,5 +1,7 @@
 package cn.codeartist.spring.aop.aopapi.advice;
 
+import org.springframework.aop.ThrowsAdvice;
+
 import java.lang.reflect.Method;
 
 /**
@@ -8,7 +10,7 @@ import java.lang.reflect.Method;
  * @author 艾江南
  * @date 2022/11/14
  */
-public class ThrowsAdvice implements org.springframework.aop.ThrowsAdvice {
+public class DemoThrowsAdvice implements ThrowsAdvice {
 
     public void afterThrowing(Method method, Object[] args, Object target, Exception ex) {
         System.out.println("ThrowsAdvice.afterThrowing");

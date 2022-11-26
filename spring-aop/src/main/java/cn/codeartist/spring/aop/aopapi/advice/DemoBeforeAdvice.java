@@ -10,7 +10,7 @@ import java.lang.reflect.Method;
  * @author 艾江南
  * @date 2022/11/14
  */
-public class BeforeAdvice implements MethodBeforeAdvice {
+public class DemoBeforeAdvice implements MethodBeforeAdvice {
 
     @Override
     public void before(Method method, Object[] args, Object target) throws Throwable {

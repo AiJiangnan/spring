@@ -1,5 +1,7 @@
 package cn.codeartist.spring.aop.aopapi.advice;
 
+import org.springframework.aop.AfterReturningAdvice;
+
 import java.lang.reflect.Method;
 
 /**
@@ -8,7 +10,7 @@ import java.lang.reflect.Method;
  * @author 艾江南
  * @date 2022/11/14
  */
-public class AfterReturningAdvice implements org.springframework.aop.AfterReturningAdvice {
+public class DemoAfterReturningAdvice implements AfterReturningAdvice {
 
     @Override
     public void afterReturning(Object returnValue, Method method, Object[] args, Object target) {
