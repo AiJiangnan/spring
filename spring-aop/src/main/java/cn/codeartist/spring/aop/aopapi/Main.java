@@ -3,6 +3,7 @@ package cn.codeartist.spring.aop.aopapi;
 import cn.codeartist.spring.aop.aopapi.advice.DemoAroundAdvice;
 import org.springframework.aop.Advisor;
 import org.springframework.aop.aspectj.AspectJExpressionPointcut;
+import org.springframework.aop.support.DefaultPointcutAdvisor;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -32,7 +33,7 @@ public class Main {
 
         @Bean
         public Advisor demoPointcutAdvisor() {
-            DemoPointcutAdvisor advisor = new DemoPointcutAdvisor();
+            DefaultPointcutAdvisor advisor = new DefaultPointcutAdvisor();
 
             AspectJExpressionPointcut pointcut = new AspectJExpressionPointcut();
             pointcut.setExpression("execution(* cn.codeartist.spring.aop.aopapi.*.*(..))");
