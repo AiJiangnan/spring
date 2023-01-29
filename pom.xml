@@ -13,6 +13,7 @@
         <module>spring-ioc</module>
         <module>spring-aop</module>
         <module>spring-test</module>
+        <module>spring-jdbc</module>
     </modules>
 
     <groupId>cn.codeartist</groupId>
