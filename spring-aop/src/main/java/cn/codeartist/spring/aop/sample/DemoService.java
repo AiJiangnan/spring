@@ -1,5 +1,6 @@
 package cn.codeartist.spring.aop.sample;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -11,6 +12,13 @@ import org.springframework.transaction.annotation.Transactional;
  */
 @Service
 public class DemoService {
+
+    @Autowired
+    private DemoService that;
+
+    public void insert() {
+        that.insertBatch();
+    }
 
     @Transactional(rollbackFor = Exception.class)
     public void insertBatch() {
